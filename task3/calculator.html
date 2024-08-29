@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <style>
+            .cls2{
+                border-style: solid;
+                border-color: blue;
+                margin:10px;
+                border-radius: 10px;
+                padding-left:10px;
+                padding-top:10px;
+                height: 70px;
+            }
+            .cls3{
+                border-style: solid;
+                border-color: rgb(246, 255, 0);
+                margin:10px;
+                border-radius: 10px;
+                padding-left:10px;
+                padding-top:5px;
+                padding-bottom:20px;
+                height: 50px;
+            }
+            .cls1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            }
+            button{
+                text-align: center;
+                background-color:rgb(255, 255, 0);
+                color:rgb(0, 0, 0);
+                border-radius: 8px;
+                border-color: rgb(0, 30, 255);
+                padding:20px;
+                padding-left:25px;
+                padding-right:25px;
+                font-size: 30px;
+                margin: 5px;
+                margin-left:4px;
+                margin-right:4px;
+                width:70px;
+            }
+            button:hover{
+                background-color:blue;
+                color:rgb(0, 0, 0);
+                border-color:yellow;
+            }
+        </style>
+    </head>
+    <body style="background-color: black;">
+        <div class="container">
+            <h1 style="font-size:50px;font-style:bold;color:blue;text-align: center;"><small style="font-size:50px;font-style:bold;color:rgb(234, 255, 0);">Lets</small>Calculate</h1>
+        </div>
+        <div class="cls1">
+        <div class="card mx-5 my-5" style="background-color: rgb(0, 0, 0);border-color: yellow;width:25rem;">
+            <div class="cls2">
+                <p id="c1" style="font-size:30px;color:yellow;">0</p>
+            </div>
+            <div class="cls3">
+                <p id="c2" style="font-size:20px;color:blue;"></p>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('1')" id="b1">1</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('2')" id="b2">2</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('3')" id="b3">3</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('+')" id="b4">+</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('4')" id="b5">4</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('5')" id="b6">5</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('6')" id="b7">6</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('-')" id="b8">-</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('7')" id="b9">7</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('8')" id="b10">8</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('9')" id="b11">9</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('*')" id="b12">*</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="clear1()" id="b15">C</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('0')" id="b13">0</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="calculate()" id="b16">=</button>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" onclick="initailze('/')" id="b14">/</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <script>
+            var x='';
+            function initailze(val)
+            {
+                x=x+val;
+                document.getElementById("c1").innerHTML=val;
+                document.getElementById("c2").innerHTML=x;
+            }
+            function clear1()
+            {
+                document.getElementById("c1").innerHTML='0';
+                document.getElementById("c2").innerHTML='';
+                x=''
+            }
+            function calculate()
+            {
+                var y=document.getElementById("c2").innerHTML;
+                var re=eval(y);
+                document.getElementById("c1").innerHTML=re;
+                document.getElementById("c2").innerHTML='';
+                x='';
+            }
+            function handleKeyboardInput(event) {
+            const key = event.key;
+
+            if (key >= '0' && key <= '9') {
+                initailze(key);
+            } else if (key === '+') {
+                initailze('+');
+            } else if (key === '-') {
+                initailze('-');
+            } else if (key === '*') {
+                initailze('*');
+            } else if (key === '/') {
+                initailze('/');
+            } else if (key === 'Enter' || key === '=') {
+                calculate();
+            } else if (key === 'Escape' || key === 'C' || key === 'c') {
+                clear1();
+            } else if (key === 'Backspace') {
+
+            x = x.slice(0, -1);
+            document.getElementById("c1").innerHTML = x.slice(-1) || '0';
+            document.getElementById("c2").innerHTML = x;
+            }
+        }
+        document.addEventListener('keydown', handleKeyboardInput);
+        </script>
+    </body>
+</html>
