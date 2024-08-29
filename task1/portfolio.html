@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <style>
+        body{
+            width: 100%;
+        }
+        .navbar{
+            background-color: rgb(255, 255, 255);
+            width:100%;
+            height:100px;
+            margin-top:0;
+            color:white;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding: 0px 20px;
+            position: fixed;
+            top:0;
+            z-index:1000;
+        }
+        .navbar h2{
+            margin:0;
+            font-family:Arial, Helvetica, sans-serif;
+            margin-left: 5px;
+        }
+        .navbar ul{
+            list-style-type:none;
+            margin:0px;
+            padding:0px;
+            display: flex;
+        }
+        .navbar ul li{
+            margin-left:5px;
+            margin-right: 10px;
+        }
+        .navbar ul li a{
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: bold;
+            font-size: 20px;
+            display:block;
+        }
+        .navbar ul li a:hover{
+            color:rgb(177, 177, 177);
+        }
+        img{
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+        .card h1,h4,p{
+            margin-left:10px;
+        }
+        .card{
+            border-color:rgb(255, 255, 255);
+            background-color: rgb(255, 255, 255);
+            height:370px;
+            width:800px;
+            box-shadow:0px 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+            align-items: center;
+            padding:30px;
+            margin-top: 200px;
+        }
+        .card1 h1,h4,p{
+            text-align:center;
+            font-size:25px;
+            margin-top:10px;
+        }
+        .card1{
+            border-style: solid;
+            border-color:rgb(120, 120, 120);
+            background-color: rgb(255, 255, 255);
+            height:auto;
+            width:400px;
+            box-shadow:0px 8px 16px rgba(0,0,0,0.2);
+            padding:10px;
+            margin-top:5px;
+            position: relative;
+            align-items:center;
+            border-radius:50px;
+            margin:10px;
+        }
+        .card1:hover{
+            background-color: rgb(175, 175, 175);
+        }
+        .card2 h1,h5,p,a{
+            text-align:center;
+            font-size:25px;
+            text-decoration:none;
+        }
+        #a2{
+            background-color:rgb(119, 119, 255);
+            color:white;
+            padding:30px;
+            border-radius: 50px;
+            margin-left:50px;
+            border-style: solid;
+            border-color:black;
+        }
+        #a2:hover{
+            background-color: blue;
+        }
+        .card2{
+            border-style: solid;
+            border-color:rgb(255, 254, 254);
+            background-color: rgb(213, 213, 213);
+            height:200px;
+            width:400px;
+            box-shadow:0px 8px 16px rgba(0,0,0,0.2);
+            padding:10px;
+            margin-top:5px;
+            position: relative;
+            align-items:center;
+            border-radius:50px;
+        }
+        .card2:hover{
+            background-color: rgb(255, 255, 255);
+        }
+        #c1{
+            margin-top:120px;
+        }
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: yellow;
+        }
+        small{
+            color:rgb(255, 81, 81);
+            font-size: 25px;
+        }
+        .navbar1{
+            background-color: rgb(255, 255, 255);
+            width:100%;
+            height:100px;
+            margin-top:0;
+            color:white;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding: 0px 20px;
+        }
+        .navbar1 h2{
+            margin:0;
+            font-family:Arial, Helvetica, sans-serif;
+            margin-left: 5px;
+        }
+        .navbar1 ul{
+            list-style-type:none;
+            margin:0px;
+            padding:0px;
+            display: flex;
+        }
+        .navbar1 ul li{
+            margin-left:20px;
+            ;
+        }
+        .navbar1 ul li a{
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: bold;
+            font-size: 20px;
+            display:block;
+        }
+        .navbar1 ul li a:hover{
+            color:rgb(177, 177, 177);
+        }
+    </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <img src="images/i2.png" height="120px" width="150px"/>
+            <ul class="menu">
+                <li><a href="#c2">About</a></li>
+                <li><a href="#c3">Skills</a></li>
+                <li><a href="#c4">Projects</a></li>
+                <li><a href="#c5">Resume</a></li>
+                <li><a href="#c6">Contact</a></li>
+            </ul>
+        </div>
+        <script>
+            let nav = document.getElementById("cls1");
+            let sticky = nav.offsetTop;
+            window.onscroll = function() {sticker()};
+            function sticker() {
+               if (window.pageYOffset >= sticky) {
+                  nav.classList.add("sticky")
+               } else {
+                  nav.classList.remove("sticky");
+               }
+            }
+        </script>
+        <header id="c1">
+            <div class="container-fixed mx-5">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="card my-5 mx-auto d-block">
+                        <h1 style="text-align:left;color:black;font-size:70px;">Hi,I am <small style="color:rgb(255, 129, 129);font-size:70px;">Sukanth</small></h1>
+                        <h4 style="text-align:left;font-size:40px;color:black">Full Stack developer</h4>
+                        <h4 style="text-align:left;color:rgb(0, 0, 0);font-size:35px;">Career objective</h4>
+                        <p style="text-align:left;font-size:25px;color:rgb(128, 128, 128)">
+                            To become successful full stack developer 
+                            in a reputated company and 
+                            improve my skils and 
+                            to lead a team as a team leader
+                        </p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <img src="images/i5.avif" height="480px" width="480px"/>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <br><br>
+        <P id="c2"></P><br><br><br>
+        <div class="container-fixed">
+            <div class="container-fixed mx-5">
+                <div class="row">
+                    <div class="col-4">
+                        <img style="margin-left:150px;margin-top:60px;" src="images/i1.png" height="250px" width="250px" class="img-fluid" alt="profile picture"/>
+                    </div>
+                    <div class="col-8">
+                        <h1 style="font-size:50px;margin-left:10px;margin-top:30px;">About Me</h1>
+                        <p style="text-align:left;font-size:25px;color:rgb(128, 128, 128);margin-right:50px;">
+                            I'm <small>Sukanth</small> and I from <small>Salem</small>.I'm currently pursuing my <small>BTECH Information Technology</small> degree at <small>Kongu Engineering College</small> at Perundurai.I completed my schooling in <small>Mahendra Matric Higher Secondary School</small> at kallipatti with a percentage of <small>93.67% in 12th</small> and <small>99.7% in 10th</small>.My area of interest is <small>App development</small> and my area of specialization in <small>Full stack development</small>.My short term goal is to be <small>developer in a reputated company</small> and my long term is to become a <small>successful developer nad noticed by everyone</small>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+        <P id="c3"></P><br><br><br><br>
+        <div class="container-fixed">
+            <h1 style="font-size:50px;margin-left:100px;">Skills</h1><br>
+            <div class="container-fixed" style="margin-left:80px;margin-right:80px;">
+                <div class="row">
+                    <h3 style="margin-left:50px;color:rgb(255, 43, 43);">Technical Skills</h3><br><br>
+                    <div class="col-4 mt-3">
+                        <div class="card1 mx-auto d-block">
+                            <p>Full stack web development</p>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-3">
+                        <div class="card1 mx-auto d-block">
+                            <p>Java</p>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-3">
+                        <div class="card1 mx-auto d-block">
+                            <p>C++</p>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-3">
+                        <div class="card1 mx-auto d-block">
+                            <p>HTML,CSS,Javascript</p>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-3">
+                        <div class="card1 mx-auto d-block">
+                            <p>Pyhton</p>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-3">
+                        <div class="card1 mx-auto d-block">
+                            <p>Nodejs,Mongodb</p>
+                        </div>
+                    </div>
+                    <h3 style="margin-left:50px;color:rgb(255, 43, 43);margin-top:20px;">Non-Technical Skills</h3><br><br>
+                    <div class="col-4 mt-3">
+                        <div class="card1 mx-auto d-block">
+                            <p>Logical thinking</p>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-3">
+                        <div class="card1 mx-auto d-block">
+                            <p>Leadership quality</p>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-3">
+                        <div class="card1 mx-auto d-block">
+                            <p>Quick Learner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+        <P id="c4"></P><br><br><br><br>
+        <div class="container-fixed">
+            <h1 style="font-size:50px;margin-left:100px;">Projects</h1><br>
+            <div class="container-fixed" style="margin-left:80px;margin-right:80px;">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card2 mt-3 mx-auto d-block">
+                            <h5 style="color:rgb(255, 66, 66);">Smart cycle rental system</h5>
+                            <p>Web</p>
+                            <p>Outside College</p>
+                            <div class="text-center">
+                            <a href="https://github.com/Sukanth-R/rentalcycles.git">Gitlink</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card2 mt-3 mx-auto d-block">
+                            <h5 style="color:rgb(255, 66, 66);">Bus tracking system</h5>
+                            <p>Web</p>
+                            <p>Inside College</p>
+                            <div class="text-center">
+                            <a href="https://github.com/Sukanth-R/bustracker.git">Gitlink</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card2 mt-3 mx-auto d-block">
+                            <h5 style="color:rgb(255, 66, 66);">Age Calculator</h5>
+                            <p>App</p>
+                            <p>Inside College</p>
+                            <div class="text-center">
+                            <a href="https://github.com/Sukanth-R/age-calculator.git">Gitlink</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br>
+        <P id="c5"></P><br><br><br><br>
+        <div class="container-fixed">
+            <h1 style="font-size:50px;margin-left:100px;">Resume</h1>
+            <div class="container-fixed mx-5">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="text-center" style="margin-top:100px;">
+                            <a id="a2" href="resume.pdf" target="_self" class="view-button">See the resume</a><br><br><br><br>
+                            <a id="a2" href="resume.pdf" download="sukanth-resume.pdf" class="view-button">Download resume</a>
+                            </div>
+                    </div>
+                    <div class="col-4">
+                        <img src="images/i7.avif" style="float:left;" class="img-fluid" height="350px" width="350px" alt="resume pic"/>
+                    </div>
+                </div>
+            </div>
+        </div><br><br><br><br><br><br><br><br><br>
+        <div id="c6" class="container-fixed">
+            <h1 style="font-size:50px;margin-left:100px;">Contact</h1>
+            <div class="container-fixed mx-5">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="images/i8.gif" class="gif ms-5" height="350px" width="350px"/>
+                    </div>
+                    <div class="col-2 text-end">
+                        <img src="images/i12.gif" style="margin-right:15px;" height="100px" width="100px"/><br>
+                        <img src="images/i10.gif" height="130px" width="130px"/>
+                    </div>
+                    <div class="col-6 text-start">
+                        <h3 style="margin-top:25px;color:rgb(94, 94, 94)">+91 9360515345</h3><br><br><br>
+                        <a href="mailto:sukanth0021@gmail.com">sukanth0021@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="navbar1">
+                <img src="images/i13.jpg" height="150px" width="190px"/>
+                <ul class="menu">
+                    <li><a href="https://www.linkedin.com/in/sukanth-r-24638a259"><img src="images/i14.png" height="100px" width="130px"/></a></li>
+                    <li><a href="https://github.com/Sukanth-R/"><img src="images/i15.png" height="100px" width="130px"/></a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>
